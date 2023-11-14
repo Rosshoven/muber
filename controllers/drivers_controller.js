@@ -7,7 +7,9 @@ module.exports = {
         res.send({ hi: 'there' });
     },
     create(req, res) {
-        res.send({email, driving})
+        // res.send({email, driving})
+        console.log(req.body);    
+        res.send({ 'hello': 'Gordy' })
     }
 };
 

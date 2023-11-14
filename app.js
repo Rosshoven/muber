@@ -1,10 +1,13 @@
 // write code to generate a new express application
 const express = require('express');
-// routes here is a function b/c module.exports
+const bodyParser = require('body-parser');
+// routes here is a function b/c its module.exports is written as a function
 const routes = require('./routes/routes');
 const app = express();
 // app is an object that takes incoming http requests, and helps run some code inside the application
 
+// with any incoming request, assume it is json and parse it into an object for us. note: has to be above routes()
+app.use(bodyParser.json());
 // call the routes function (module routes.js), passing in the app object
 routes(app);
 
