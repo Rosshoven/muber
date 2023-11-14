@@ -5,7 +5,7 @@ const DriversController = require('../controllers/drivers_controller');
 module.exports = (app) => {
 
 // GET method, Request Handler 
-// when this GET method is run with this api route, run this function
+// when this GET method is run with this api route, run this function from drivers_controller.js
 // Watch for incoming requests of method get to the route http://localhost:3050/api
 app.get('/api', DriversController.greeting)
 };
