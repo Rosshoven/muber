@@ -8,8 +8,10 @@ const app = express();
 
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://localhost/muber');
-mongoose.connect('mongodb://127.0.0.1:27017/muber');
+if(process.env.NODE_ENV !== 'test') {
+mongoose.connect('mongodb://localhost/muber');
+// mongoose.connect('mongodb://127.0.0.1:27017/muber')
+};
 
 
 
@@ -20,4 +22,3 @@ routes(app);
 
 // send it out so index.js gets it for api routes
 module.exports = app;
-;
