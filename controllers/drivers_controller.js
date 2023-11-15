@@ -1,3 +1,4 @@
+const Driver = require('../models/driver');
 // OBJECT, contains all the logic of how to respond to a specific request
 // we have a controller for each type of resource in our application. Drivers in this case
 
@@ -7,9 +8,11 @@ module.exports = {
         res.send({ hi: 'there' });
     },
     create(req, res) {
-        // res.send({email, driving})
-        console.log(req.body);    
-        res.send({ 'hello': 'Gordy' })
+        const driverProps = req.body;
+
+        Driver.create(driverProps)
+          .then( driver => res.send(driver))
+      
     }
 };
 

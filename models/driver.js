@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const DriverSchema = new new Schema({
+const DriverSchema = new Schema({
     email: {
         type: String,
         // common piece of validation, easy
